@@ -15,6 +15,9 @@ function ask() {
 # Replace .bashrc
 ln -sb --suffix=.old $(realpath config/bashrc) ~/.bashrc
 
+# create .bashrc.d
+mkdir ~/.bashrc.d
+
 echo '# -------------- dotfiles install ---------------'
 
 # Ask which files should be sourced
