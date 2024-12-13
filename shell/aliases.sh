@@ -11,6 +11,7 @@ alias l='ls -l'
 
 # python env management
 alias activate-venv='source .venv/bin/activate'
+alias pip='pip --require-virtualenv'
 alias pip-install-no-index='pip install --no-index -f ~/Cache/pip/'
 alias pip-download-cache='pip download -d ~/Cache/pip/'
 

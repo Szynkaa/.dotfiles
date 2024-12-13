@@ -14,6 +14,7 @@ fi
 echo 'set completion-ignore-case On' >> $inputrc_path
 
 # Add export
-echo "export INPUTRC=${inputrc_path}" >> ~/.bashrc.d/config-local.sh
+echo "export INPUTRC=${inputrc_path}" >> ~/.bashrc.d/local.sh
 
 unset inputrc_path
+
