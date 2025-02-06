@@ -42,4 +42,3 @@ for file in install.d/*; do
         fi
     fi
 done
-

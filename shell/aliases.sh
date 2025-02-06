@@ -13,5 +13,4 @@ alias l='ls -l'
 alias venv-activate='source .venv/bin/activate'
 alias pip='pip --require-virtualenv'
 alias pip-install-cache='pip install -f ~/Cache/pip/'
-alias pip-download-cache='pip download -d ~/Cache/pip/'
-
+alias pip-download-cache='\pip download -d ~/Cache/pip/' # use not aliased pip
