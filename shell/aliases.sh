@@ -1,4 +1,4 @@
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -h'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
