@@ -13,7 +13,9 @@ function ask() {
 }
 
 # Replace .bashrc
-ln -sb --suffix=.old $(realpath config/bashrc) ~/.bashrc
+if [ ! -L "~/.bashrc" ]; then
+	ln -sb --suffix=.old $(realpath config/bashrc) ~/.bashrc
+fi
 
 # create .bashrc.d
 mkdir ~/.bashrc.d
