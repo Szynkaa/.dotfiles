@@ -12,13 +12,15 @@ function ask() {
     [ "$response_lc" = "y" ]
 }
 
-# Replace .bashrc
-if [ ! -L "~/.bashrc" ]; then
-	ln -sb --suffix=.old $(realpath config/bashrc) ~/.bashrc
-fi
+# create .bash
+mkdir ~/.bash
+mkdir ~/.bash/shell
 
-# create .bashrc.d
-mkdir ~/.bashrc.d
+# Backup existing .bashrc, link new one
+if [ ! -L ~/.bashrc ]; then
+    mv ~/.bashrc ~/.bash/.bashrc.old
+    ln -s $(realpath config/bashrc) ~/.bashrc
+fi
 
 echo '# -------------- dotfiles install ---------------'
 
@@ -28,7 +30,7 @@ for file in shell/*; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")
         if ask "${filename}?"; then
-            ln -s $(realpath "$file") ~/.bashrc.d/$filename
+            ln -s $(realpath "$file") ~/.bash/shell/$filename
         fi
     fi
 done
